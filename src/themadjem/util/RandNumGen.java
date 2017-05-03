@@ -2,6 +2,7 @@ package themadjem.util;
 
 import java.awt.*;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom
 
 /**
  * @author themadjem
@@ -85,16 +86,15 @@ public class RandNumGen {
 
     /**
      * Returns a random number between
-     * the lower and upper bounds
+     * the lower and upper bounds (inclusive)
      *
      * @param lower lower bound
      * @param upper upper bound
      * @return random number
      */
-    public int randInt(int lower, int upper) {//todo make this work
-        if (upper <= lower) return 0;
-        int i1 = rand.nextInt(upper - lower);
-        return 0;
+    public int randInt(int lower, int upper) {
+        //Add 1 to the upper bound to make it inclusive
+        return ThreadLocalRandom.current().nextInt(lower, upper + 1);
     }
 
     public boolean randBool() {
