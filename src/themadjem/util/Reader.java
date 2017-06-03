@@ -23,9 +23,9 @@ public class Reader {
      *             "file.txt"
      */
     public Reader(@Nullable String path) {
-        if (validPath(path))
+        if (validPath(path)) {
             open();
-        else
+        } else
             throw new RuntimeException("Invalid Path");
     }
 
@@ -43,10 +43,7 @@ public class Reader {
 
 
     /**
-     * Creates a new buffered reader of the
-     * filePath
-     *
-     * @implNote Must have filePath and appendFile pre-defined
+     * Creates a new buffered reader of the filePath
      */
     private void open() {
         try {
@@ -63,10 +60,10 @@ public class Reader {
      */
     private boolean validPath(String path) {
         if (path == null || path.isEmpty()) {
-            path = "file.txt";
+            filePath = "file.txt";
         } else {
             int index = -1;
-            for (int i = path.length(); i >= 0; i++) {
+            for (int i = (path.length()-1); i >= 0; i--) {
                 if (path.charAt(i) == '.') {
                     index = i;
                     break;
@@ -75,6 +72,7 @@ public class Reader {
             if (index == -1) {
                 return false;
             }
+            filePath = path;
         }
         return true;
     }

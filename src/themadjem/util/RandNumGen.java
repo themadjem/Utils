@@ -2,7 +2,7 @@ package themadjem.util;
 
 import java.awt.*;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * @author themadjem
@@ -13,9 +13,7 @@ public class RandNumGen {
     private Random rand;
     //array of colors used for generating random colors
     private Color[] colors = {Color.RED, Color.GREEN, Color.BLUE,
-            Color.CYAN, Color.MAGENTA, Color.YELLOW,
-            Color.DARK_GRAY, Color.GRAY, Color.LIGHT_GRAY,
-            Color.BLACK, Color.WHITE, Color.ORANGE, Color.PINK
+            Color.CYAN, Color.MAGENTA, Color.YELLOW, Color.ORANGE, Color.PINK
     };
 
     /**

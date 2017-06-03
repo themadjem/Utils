@@ -4,9 +4,11 @@ import com.sun.istack.internal.Nullable;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.lang.annotation.Annotation;
 
 /**
  * This class is a collection of functions for writing text to files
+ * todo: make extensions not require a dot
  *
  * @author themadjem
  *         Copyright 4/8/2017.
@@ -36,6 +38,7 @@ public class Writer {
         open();
     }
 
+
     /**
      * Constructor for the writer that appends
      *
@@ -55,6 +58,19 @@ public class Writer {
      */
     public Writer(String folder, String fileName, String ext) {
         this(folder + fileName + ext, true);
+    }
+
+    /**
+     * Constructor that takes in a destination folder,
+     * a file name and a file extension
+     * TODO:fix this comment
+     *
+     * @param fileName name of file
+     * @param ext      extension of file
+     * @param append   isAppending
+     */
+    public Writer(String fileName, String ext, boolean append) {
+        this(fileName + ext, append);
     }
 
     public void setAppending(boolean appending) {
